@@ -167,7 +167,7 @@ class ExecApiMixin(object):
             return self._result(res)
         # I need both the socket and the stream for a project I'm working on
         if double_return:
-            return {socket: self._get_raw_response_socket(res), stream: self._read_from_socket(res, stream, tty=tty, demux=demux)}
+            return {'socket': self._get_raw_response_socket(res), 'stream': self._read_from_socket(res, stream, tty=tty, demux=demux)}
         if socket:
             return self._get_raw_response_socket(res)
         return self._read_from_socket(res, stream, tty=tty, demux=demux)
